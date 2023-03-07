@@ -6,10 +6,10 @@ const port = process.env.PORT ? Number(process.env.PORT) : 3000;
 
 const app = express()
 
-app.use(express.static('assets'))
+app.use(express.static('client/build'));
 
 app.get('/', (req, res) => {
-  res.sendFile('index.html', { root: "assets" });
+  res.sendFile('index.html', { root: "client/build" });
 });
 
 app.get('/s3Url', async (req, res) => {
