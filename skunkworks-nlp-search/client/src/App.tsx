@@ -9,7 +9,6 @@ import ImageSearchWidget from './ImageSearchWidget';
 function App() {
   return (
     <div className="App">
-      hi.
       <ImageSearchWidget/>
     </div>
   );

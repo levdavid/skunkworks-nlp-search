@@ -6,7 +6,7 @@ import React from 'react';
 const ImageSearchWidget = () => {
     return (
         <>
-            <h1>Hello world</h1>
+            <h1>Please select the image to upload</h1>
             <input id="imageInput" type="file" accept="image/*, application/pdf" />
             <Button as="button" type="submit" baseFontSize={13} darkMode={true} variant="primary" leftGlyph={<Icon glyph="Upload" />}>Upload</Button>
         </>
