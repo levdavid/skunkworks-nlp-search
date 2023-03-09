@@ -1,15 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import LeafyGreenProvider from '@leafygreen-ui/leafygreen-provider';
-import Buffer from 'buffer';
 
-import ImageSearchWidget from './ImageSearchWidget';
+import UploadImageToS3WithNativeSdk from './UploadImageToS3WithNativeSdk';
 
 function App() {
   return (
     <div className="App">
-      <ImageSearchWidget/>
+      <UploadImageToS3WithNativeSdk/>
     </div>
   );
 }

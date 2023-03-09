@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
 const resolve = require('resolve');
+const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const InlineChunkHtmlPlugin = require('react-dev-utils/InlineChunkHtmlPlugin');
@@ -335,8 +336,11 @@ module.exports = function (webpackEnv) {
       ],
       fallback: { 
         "stream": require.resolve("stream-browserify"),
-        "buffer": require.resolve("buffer")
-      }
+        "buffer": require.resolve("buffer"),
+        "fs": false,
+        "os": require.resolve("os-browserify/browser"),
+        "path": require.resolve("path-browserify"),
+     }
     },
     module: {
       strictExportPresence: true,
@@ -565,6 +569,7 @@ module.exports = function (webpackEnv) {
       ].filter(Boolean),
     },
     plugins: [
+      new Dotenv(),
       // Generates an `index.html` file with the <script> injected.
       new HtmlWebpackPlugin(
         Object.assign(
