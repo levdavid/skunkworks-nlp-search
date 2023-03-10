@@ -5,8 +5,11 @@
   "dependencies": {
     "@babel/core": "^7.16.0",
     "@leafygreen-ui/button": "*",
+    "@leafygreen-ui/card": "^9.0.5",
     "@leafygreen-ui/icon": "*",
     "@leafygreen-ui/leafygreen-provider": "*",
+    "@leafygreen-ui/search-input": "^2.0.0",
+    "@leafygreen-ui/text-input": "^12.1.6",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
     "@svgr/webpack": "^5.5.0",
     "aws-sdk": "^2.1332.0",
@@ -85,6 +88,11 @@
       ">0.2%",
       "not dead",
       "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
     ]
   },
   "jest": {

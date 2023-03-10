@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import AWS from 'aws-sdk'
 import Button from '@leafygreen-ui/Button';
 import Icon from '@leafygreen-ui/Icon';
+import Card from "@leafygreen-ui/card";
 
 
 const S3_BUCKET = 'skunkworksnlpsearch';
@@ -29,7 +30,7 @@ const UploadImageToS3WithNativeSdk = () => {
     }
 
     const uploadFile = (file) => {
-
+        setProgress(0);
         const params = {
             ACL: 'public-read',
             Body: file,
@@ -48,12 +49,18 @@ const UploadImageToS3WithNativeSdk = () => {
 
 
     return (
-        <div>
+        <Card
+            as="div"
+            contentStyle="none"
+            darkMode={false}
+        >
             <h1>Please select the image to upload</h1>
-            <div>Native SDK File Upload Progress is {progress}% </div>
+            <br/>
+            {progress > 0 && <div>Native SDK File Upload Progress is {progress}% </div>}
+            <br/>
             <input type="file" accept="image/*, application/pdf" onChange={handleFileInput} />
-            <Button as="button" type="submit" baseFontSize={13} darkMode={true} variant="primary" leftGlyph={<Icon glyph="Upload" />} onClick={() => uploadFile(selectedFile)}> Upload to S3 </Button>
-        </div>
+            <Button as="button" type="submit" baseFontSize={13} darkMode={false} variant="primary" leftGlyph={<Icon glyph="Upload" />} onClick={() => uploadFile(selectedFile)}> Upload to S3 </Button>
+        </Card>
     )
 }
 

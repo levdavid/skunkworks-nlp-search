@@ -28,6 +28,16 @@
   color: #61dafb;
 }
 
+.Container {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.img-result {
+  max-width: fit-content;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
