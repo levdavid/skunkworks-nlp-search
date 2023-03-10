@@ -45,6 +45,7 @@ const ImageSearchWidget = () => {
             />
             <Button as="button" type="submit" baseFontSize={13} darkMode={true} variant="primary" leftGlyph={<Icon glyph="MagnifyingGlass"/>} onClick={() => searchText(searchState)}>Search</Button>
         </Card>
+        <br/>
         {!!searchResults &&
         <Card>
             <h2>Here's what we found!</h2>
